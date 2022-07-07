@@ -1,0 +1,92 @@
+<div class="u_1406483227 dmNewParagraph" dmle_widget="paragraph" id="1406483227" data-uialign="center" style="transition: none 0s ease 0s; display: block; text-align: center;" no_space_e="true" data-element-type="paragraph" data-editor-state="closed" data-version="5">
+    <!-- <h1 class="text-align-center m-size-24">
+     <span class="m-font-size-24" m-font-size-set="true" style="display: initial; color: rgb(29, 29, 29);" no_space_b="true" no_space_e="true">
+      Tempus
+     </span> 
+    </h1> -->
+   </div>
+   <div dmle_widget="html" data-element-type="html" class="u_1262240944 dmCustomHtml" id="1262240944" >
+    <div class="noselect" style="text-align: center">
+     <span id="minusbtn">
+      <i class="fas fa-minus fa-2x" style="color: #edf4ff">
+      </i>
+     </span>
+     <span id="mintamount" style="padding-left: 5px; font-family:'Arial'; font-size:35px; font-weight: bold; color: #edf4ff">
+      1
+     </span>
+     <span id="plusbtn">
+      <i class="fas fa-plus fa-2x" style="color: #edf4ff">
+      </i>
+     </span>
+    </div>
+    <script>
+     function incrementValue(e) {
+   e.preventDefault();
+   currentVal = document.getElementById("mintamount").innerText;
+ if (!isNaN(currentVal) && currentVal < 4) {
+   document.getElementById("mintamount").innerText = (parseInt(currentVal) + 1);
+ } else {
+   document.getElementById("mintamount").innerText = "4";
+ }
+}
+function decrementValue(e) {
+   e.preventDefault();
+   currentVal = document.getElementById("mintamount").innerText;
+ if (!isNaN(currentVal) && currentVal > 1) {
+   document.getElementById("mintamount").innerText = (currentVal - 1);
+ } else {
+   document.getElementById("mintamount").innerText = "1";
+ }
+}
+var buttonminus = document.getElementById("minusbtn");
+buttonminus.addEventListener('click', function(e) {
+ decrementValue(e);
+});
+var buttonplus = document.getElementById("plusbtn");
+buttonplus.addEventListener('click', function(e) {
+ incrementValue(e);
+});
+</script>
+   </div>
+   <div dmle_widget="html" data-element-type="html" class="u_1010980545 dmCustomHtml" id="1010980545">
+    <button data-display-type="block" class="u_1224660027 aligncenter dmWidget default sticky-mobile-position-bottom-right sticky-desktop-position-top-right" file="false" id="mint" dm_dont_rewrite_url="false" style="padding: 8px 8px 8px 90px; border-radius: 12px; font-size: 22px; font-family:'Verdana'; color: #f4831b; width:0x9fB9CaCED21Fb23FA890DfAa6F65817cab9C77C10px; background: #edf4ff url(https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg); background-position: 8px 3px; background-repeat: no-repeat; height: 80px ">
+        <b>Mint With Metamask</b>
+        </button>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js">
+    </script>
+    <script type="text/javascript">
+     // 1. Connect MetaMask to our site
+           var account = null;
+           var contract = null;
+           const ABI = [{"inputs":[{"internalType":"string","name":"_initBaseURI","type":"string"},{"internalType":"string","name":"_initHiddenURI","type":"string"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"ApprovalCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"ApprovalQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"ApprovalToCurrentOwner","type":"error"},{"inputs":[],"name":"ApproveToCaller","type":"error"},{"inputs":[],"name":"BalanceQueryForZeroAddress","type":"error"},{"inputs":[],"name":"MintToZeroAddress","type":"error"},{"inputs":[],"name":"MintZeroQuantity","type":"error"},{"inputs":[],"name":"OwnerQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"TransferCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"TransferFromIncorrectOwner","type":"error"},{"inputs":[],"name":"TransferToNonERC721ReceiverImplementer","type":"error"},{"inputs":[],"name":"TransferToZeroAddress","type":"error"},{"inputs":[],"name":"URIQueryForNonexistentToken","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"baseURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getOwnershipData","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"}],"internalType":"struct IERC721A.TokenOwnership","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"hiddenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxMintAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"mintRate","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"nftPerAddressLimit","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"numberMinted","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"_state","type":"bool"}],"name":"pause","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"paused","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"revealed","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"_newBaseURI","type":"string"}],"name":"setBaseURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"_hiddenURI","type":"string"}],"name":"setHiddenURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_mintRate","type":"uint256"}],"name":"setMintRate","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_limit","type":"uint256"}],"name":"setNftPerAddressLimit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newmaxMintAmount","type":"uint256"}],"name":"setmaxMintAmount","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"_revealed","type":"bool"}],"name":"toggleReveal","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"payable","type":"function"}];
+           const ADDRESS = "0x9fB9CaCED21Fb23FA890DfAa6F65817cab9C77C1";
+           document.getElementById('mint').onclick = () => {
+               (async () => {
+                   if (window.ethereum) {
+                       await window.ethereum.send('eth_requestAccounts');
+                       window.web3 = new Web3(window.ethereum);
+                       var accounts = await web3.eth.getAccounts();
+                       account = accounts[0];
+                       contract = new web3.eth.Contract(ABI, ADDRESS);
+                       //document.getElementById('mint').onclick = () => {
+                           try {
+                               document.getElementById("mint-response").innerHTML = "Processing transaction..."
+                               var mintamount = parseInt(document.getElementById("mintamount").innerText);
+                               response = await contract.methods.mint(mintamount).send({ from: account, value: (50000000000000000 * mintamount).toString() });
+                               document.getElementById("mint-response").innerHTML = "Mint successful. Congratulations!"
+                           }
+                           catch { 
+                               document.getElementById("mint-response").innerHTML = "Mint failed, the contract may be paused, you may have insufficient funds, or you may have exceeded the max mints per transaction/wallet address."
+                           }
+                       //}
+                   }
+               })();
+           }
+    </script>
+</div>
+<div class="u_1281097970 dmNewParagraph aligncenter" dmle_widget="paragraph" data-element-type="paragraph" id="1281097970" data-uialign="center" no_space_e="true" data-version="5" style="text-align:center">
+<h5 sytle="text-align:center" class="aligncenter">
+ <span class="aligncenter" style="color: #edf4ff; display: initial; text-align:center;" no_space_b="true" no_space_e="true" id="mint-response">
+ </span>
+</h5>
+</div>
